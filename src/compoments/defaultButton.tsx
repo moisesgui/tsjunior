@@ -1,19 +1,15 @@
-import React from "react";
-
-type ButtonProps = {
+export type ButtonProps = {
   onClick: () => void;
   text: string;
   color: string;
   textColor: string;
 };
 
-export const DefaultButton: React.FC<ButtonProps> = ({
-  onClick,
-  text,
-  color,
-  textColor,
-}) => (
-  <button style={{ background: color, color: textColor }} onClick={onClick}>
-    {text}
+export const DefaultButton = (props: ButtonProps) => (
+  <button
+    style={{ background: props.color, color: props.textColor }}
+    onClick={props.onClick}
+  >
+    {props.text}
   </button>
 );

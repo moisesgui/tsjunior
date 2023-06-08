@@ -18,8 +18,10 @@ function App() {
     const response = await fetch("https://pokeapi.co/api/v2/pokemon/");
     const data = await response.json();
     const pokeData: Pokemon[] = data.results;
+    const allPokemonsName: string[] = [];
+    pokeData.forEach((poke) => allPokemonsName.push(poke.name));
+    console.log(allPokemonsName);
     showPokemons(pokeData[0]);
-    console.log(pokeData[0]);
   }
 
   return (
@@ -29,8 +31,8 @@ function App() {
         <div>
           <DefaultButton
             onClick={getPokemons}
-            text="Clique aqui"
-            color="blue"
+            text="Clique Aqui"
+            color="red"
             textColor="white"
           />
         </div>
